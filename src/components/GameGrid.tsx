@@ -12,6 +12,7 @@ const GameGrid = ({selectedGenre}: {selectedGenre: Genre | null}) => {
 		<>
 			{error && <Text color={'red'}>{error}</Text>}
 			<SimpleGrid
+				marginTop={3}
 				columns={{
 					sm: 1,
 					md: 2,

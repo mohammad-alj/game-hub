@@ -1,13 +1,4 @@
-import {
-	HStack,
-	List,
-	ListItem,
-	Text,
-	Image,
-	Skeleton,
-	SkeletonText,
-	Button,
-} from '@chakra-ui/react';
+import {HStack, List, ListItem, Image, Skeleton, SkeletonText, Button} from '@chakra-ui/react';
 import useGenres, {Genre} from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
 import {useState} from 'react';
