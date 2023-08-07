@@ -1,9 +1,11 @@
 import {HStack, List, ListItem, Text, Image, Skeleton, SkeletonText} from '@chakra-ui/react';
-import useGenres from '../hooks/useGenres';
+import useGenres, {Genre} from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
+import {useState} from 'react';
 
 const GenreList = () => {
 	const {data: genres, isLoading, error} = useGenres();
+	const [selectedGenre, selectGenre] = useState<Genre | null>(null);
 	return (
 		<List>
 			{isLoading
@@ -18,7 +20,14 @@ const GenreList = () => {
 				: error
 				? null
 				: genres.map(g => (
-						<ListItem key={g.id} cursor={'pointer'}>
+						<ListItem
+							key={g.id}
+							cursor={'pointer'}
+							onClick={() => selectGenre(g)}
+							{...(g === selectedGenre
+								? {fontWeight: 'bold', textDecoration: 'underline'}
+								: null)}
+						>
 							<HStack>
 								<Image
 									boxSize={'32px'}
