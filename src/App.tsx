@@ -34,10 +34,7 @@ const App = () => {
 			<GridItem area={'main'}>
 				<HStack gap={3} paddingLeft={2.5} marginBottom={5}>
 					<PlatformSelector
-						onSelectPlatform={platform => {
-							setGameQuery({...gameQuery, platform});
-							console.log(platform);
-						}}
+						onSelectPlatform={platform => setGameQuery({...gameQuery, platform})}
 						selectedPlatform={gameQuery.platform}
 					/>
 					<SortSelector
