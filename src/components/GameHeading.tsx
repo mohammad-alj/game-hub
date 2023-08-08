@@ -6,7 +6,7 @@ const GameHeading = ({gameQuery}: {gameQuery: GameQuery}) => {
 		gameQuery.platform ? 'on ' + gameQuery.platform.name : ''
 	}`;
 	return (
-		<Heading as={'h1'} marginLeft={2} marginBottom={5} fontSize={'5xl'}>
+		<Heading as={'h1'} marginLeft={2} marginY={5} fontSize={'5xl'}>
 			{heading}
 		</Heading>
 	);
