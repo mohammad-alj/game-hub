@@ -10,11 +10,7 @@ interface Props {
 const PlatformSelector = ({onSelectPlatform, selectedPlatform}: Props) => {
 	const {data: platforms, error, isLoading} = usePlatforms();
 
-	return error ? null : isLoading ? (
-		<Box borderRadius={4} overflow={'hidden'}>
-			<Skeleton height={'40px'} width={'125px'} />
-		</Box>
-	) : (
+	return error ? null : (
 		<Menu>
 			<MenuButton as={Button} rightIcon={<BsChevronDown />}>
 				{selectedPlatform?.name || 'Platforms'}
